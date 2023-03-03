@@ -19,3 +19,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+suggests: 
+    GGally,
+    tidyverse
