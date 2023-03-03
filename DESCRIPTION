@@ -1,0 +1,21 @@
+Package: sobrevivencia
+Title: Analise de Sobrevivencia e Confiabilidade
+Version: 0.0.1
+Authors@R: 
+    person("Fabio", "Demarqui", , "fndemarqui@est.ufmg.br", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9236-1986"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends:
+    survival,
+    R (>= 2.10)
+LazyData: true
+Imports: Rdpack
+RdMacros: Rdpack
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
