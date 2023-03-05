@@ -22,10 +22,16 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/camundongos.html</loc>
+  </url>
+  <url>
     <loc>/reference/diarreia.html</loc>
   </url>
   <url>
     <loc>/reference/e1684.html</loc>
+  </url>
+  <url>
+    <loc>/reference/hepatite.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
@@ -40,6 +46,9 @@
     <loc>/reference/leukUK.html</loc>
   </url>
   <url>
+    <loc>/reference/malaria.html</loc>
+  </url>
+  <url>
     <loc>/reference/mama.html</loc>
   </url>
   <url>
@@ -50,6 +59,9 @@
   </url>
   <url>
     <loc>/reference/pulmao.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sinusite.html</loc>
   </url>
   <url>
     <loc>/reference/sobrevivencia-package.html</loc>

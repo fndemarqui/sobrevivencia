@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^stuff$
 ^\.Rhistory$
+^doc$
+^Meta$
