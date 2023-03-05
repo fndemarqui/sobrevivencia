@@ -29,7 +29,7 @@ NULL
 #' @docType data
 #' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
 #' @keywords datasets
-#' @description Estudo retrospectivo realizado com 94 mulhres, das quais 46 receberam o tratamento somente com radioterapia e 48 com radioterapia e quimioterapia. O evento de interesse foi definido como a ocorrência da primeira (moderada ou severa) da primeira retração de uma mama. As pacientes foram inicialmente observadas a cada 4-6 meses e, assim que ficavam melhores o intervalo entre as visitas aumentava.
+#' @description Estudo retrospectivo realizado com 94 mulhres, das quais 46 receberam o tratamento somente com radioterapia e 48 com radioterapia e quimioterapia. O evento de interesse foi definido como a ocorrência da primeira (moderada ou severa) retração de uma mama. As pacientes foram inicialmente observadas a cada 4-6 meses e, assim que ficavam melhores o intervalo entre as visitas aumentava.
 #' @format Data frame com 94 linhas e 4 variáveis:
 #' \itemize{
 #'   \item esquerda: limite inferior do intervalo (em meses)
@@ -42,6 +42,27 @@ NULL
 #' \insertRef{bookEnrico}{sobrevivencia}
 #'
 NULL
+
+#' Eficácia da imunização pela malária
+#'
+#' @name malaria
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Estudo experimental realizado com camundongos para verificar a eficácia da imunização pela malária. O estudo, que foi conduzido no Centro de Pesquisas Renee Rachou, Fiocruz-MG, contou com 44 camundongos que foram infectados pela malária. Os camundongos foram aleatoriamente divididos em 3 grupos: grupo: 1 - imunizados 30 dias antes da infecção; 2 - sem imunização e com infecção pela malária; 3 - sem imunização e com infecção pela malária e esquistossomose.
+#' @format Data frame com 44 linhas e 3 variáveis:
+#' \itemize{
+#'   \item tempo: tempo (em dias) decorrido deste a infecção pela malária até a morte do camundongo
+#'   \item cens: indicador de falha ou censura (1 - falha; 0 - censura)
+#'   \item grupo: 1 - imunizados 30 dias antes da infecção; 2 - sem imunização e com infecção pela malária; 3 - sem imunização e com infecção pela malária e esquistossomose;
+#'   \item evento: indicadora da ocorrência do evento de interesse (retração)
+#' }
+#' @references
+#'
+#' \insertRef{bookEnrico}{sobrevivencia}
+#'
+NULL
+
 
 
 #' Tempos de reincidência de tumor sólido
@@ -82,25 +103,6 @@ NULL
 #'
 NULL
 
-
-#' Tempos de reincidência de tumor sólido
-#'
-#' @name tumores
-#' @docType data
-#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
-#' @keywords datasets
-#' @description Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-#' @format Data frame com 10 linhas e 3 variáveis:
-#' \itemize{
-#'   \item entrada: tempo de entrada do paciente no estudo (em meses)
-#'   \item saida: tempo de saída do paciente no estudo (em meses)
-#'   \item evento: indicadora da ocorrência do evento de interesse (reincidência)
-#' }
-#' @references
-#'
-#' \insertRef{bookMarta}{sobrevivencia}
-#'
-NULL
 
 
 #' Manutenção preventiva de transformadores
@@ -163,87 +165,6 @@ NULL
 #'}
 #'
 #' \insertRef{2002Silvia}{sobrevivencia}
-#'
-NULL
-
-
-#' Tempos de reincidência de tumor sólido
-#'
-#' @name tumores
-#' @docType data
-#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
-#' @keywords datasets
-#' @description Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-#' @format Data frame com 10 linhas e 3 variáveis:
-#' \itemize{
-#'   \item entrada: tempo de entrada do paciente no estudo (em meses)
-#'   \item saida: tempo de saída do paciente no estudo (em meses)
-#'   \item evento: indicadora da ocorrência do evento de interesse (reincidência)
-#' }
-#' @references
-#'
-#' \insertRef{bookMarta}{sobrevivencia}
-#'
-NULL
-
-
-#' Tempo de vida e isoladores elétricos
-#'
-#' @name isoladores
-#' @docType data
-#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
-#' @keywords datasets
-#' @description Um fabricante de em tipo de isolador elétrico quer conhecer o comportamento do seu produto funcionando na temperatura de 200º C. Um teste de vida foi realizado nestas condições usando 60 isoladores elétricos. O teste terminou quando 45 isoladores falharam (censura à direita do tipo II). As 15 unidades que não falharam até o final do teste foram censuradas no tempo t = 2729 horas.
-#' @format Data frame com 6 linhas e 2 variáveis:
-#' \itemize{
-#'   \item tempo: tempo de vida dos isoladores (em horas)
-#'   \item evento: indicadora da ocorrência do evento de interesse (retração)
-#' }
-#' @references
-#'
-#' \insertRef{bookMarta}{sobrevivencia}
-#'
-NULL
-
-
-#' Tempos de reincidência de tumor sólido
-#'
-#' @name tumores
-#' @docType data
-#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
-#' @keywords datasets
-#' @description Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-#' @format Data frame com 10 linhas e 3 variáveis:
-#' \itemize{
-#'   \item entrada: tempo de entrada do paciente no estudo (em meses)
-#'   \item saida: tempo de saída do paciente no estudo (em meses)
-#'   \item evento: indicadora da ocorrência do evento de interesse (reincidência)
-#' }
-#' @references
-#'
-#' \insertRef{bookMarta}{sobrevivencia}
-#'
-NULL
-
-
-#' Manutenção preventiva de transformadores
-#'
-#' @name transformadores
-#' @docType data
-#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
-#' @keywords datasets
-#' @description Uma companhia de energia elétrica deseja estabelecer uma política de manutenção preventiva para seus transformadores, visando minimizar o custo esperado associado a sua manutenção. Tal política de manutenção deve levar em conta ambos os custos decorrentes da paralização programada (manutenção preventiva) e não programada (falha e posterior reparo do tranformador). Com esse objetivo, 30 transformadores foram colocados sob teste e concluiu-se que o tempo ótimo entre manutenções preventivas é igual a 6285 horas.
-#' @format Data frame com 61 linhas e 5 variáveis:
-#' \itemize{
-#'   \item tranformador: indicadora do transformador sendo acompanhado
-#'   \item unidade: indicadora do tranformador sendo acompanhado (transformadores que passam por manutenção preventiva são considerados novas unidades)
-#'   \item preventiva: variável indicadora (1 - ocorrência de manutenção preventiva; 0 -  caso contrário)
-#'   \item tempo: tempo até a falha do transformador (em horas)
-#'   \item evento: indicadora da ocorrência do evento de interesse (falha do tranformador)
-#' }
-#' @references
-#'
-#' \insertRef{2007Gilardoni}{sobrevivencia}
 #'
 NULL
 
@@ -372,5 +293,76 @@ NULL
 #' @references
 #'
 #' \insertRef{2005Hamada}{sobrevivencia}
+#'
+NULL
+
+
+
+#' Dados experimentais utilizando camundongos
+#'
+#' @name camundongos
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Um estudo laboratorial foi realizado para investigar o efeito protedor do fungo Saccharomycs boulardii em 93 ratos debilitados imunologicamente. Inicialmente, os sistemas imunológicos dos ratos foram debilitados quimicamente e, a seguir, 4 tratamentos (controle e fungo nas dosagens 10mg, 1mg  e 0.1mg) foram alocados aleatoriamente a cada animal. A variável resposta foi o tempo de vida (em dias) após a aplicação do tratamento. O estudo teve por objetivo comparar os tratamentos controlando pelo peso inicial dos ratos.
+#' @format Data frame com 93 linhas e 4 variáveis:
+#' \itemize{
+#'   \item grupo: 1 - controle; 2 - fungo na dosagem 10mg, 3 - fungo na dosagem 1mg  e 4 - fungo na dosagem 0.1mg
+#'   \item peso: peso do rato no início do estudo
+#'   \item tempo: tempo de vida (em dias) após a aplicação do tratamento
+#'   \item evento: indicadora da ocorrência do evento de interesse (retração)
+#' }
+#' @references
+#'
+#' \insertRef{bookEnrico}{sobrevivencia}
+#'
+NULL
+
+
+#' Dados de hepatite
+#'
+#' @name hepatite
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Estudo clínico aleatorizado realizado para investigar da terapia com esteróide no tratameno de hepatite viral aguda. Os 29 pacientes com a doença foram aleatorizados para receber um placebo ou o tratamento com esteróide. Cada paciente foi acompanhado por 16 semanas, ou até a morte, ou até a perda de acompanhamento.
+#' @format Data frame com 29 linhas e 3 variáveis:
+#' \itemize{
+#'   \item tempos: tempo até a morte do paciente (em semanas) em decorrência da hepatite ou a perda do acompanhamento.
+#'   \item cens: indicadora da ocorrência do evento de interesse
+#'   \item grupos: 1 - controle; 2 - esteróide
+#' }
+#' @references
+#'
+#' \insertRef{bookEnrico}{sobrevivencia}
+#'
+NULL
+
+
+#' Sinusite em pacientes com HIV
+#'
+#' @name sinusite
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Estudo realizado no Departamento de Otorrinolaringologia da UFMG, entre março de 1993 e fevereiro de 1995, com o objetivo de verificar a hipótese de que a infecção pelo HIV aumenta o risco de sinusite. Participaram do estudo 91 pacientes infectados com HIV e 21 pacientes não infectados com HIV.
+#' @format Data frame com 133 linhas e 12 variáveis:
+#' \itemize{
+#'   \item pac: identificador do paciente
+#'   \item id: idade do paciente (em anos)
+#'   \item sex: sexo do paciente (0 - masculino; 1 feminino)
+#'   \item grp: grupo de risco (1 - paciente HIV soronegativo; 2 - paciente HIV soropositivo assintomático; 3 - paciente com ARC; 4 paciente com AIDS)
+#'   \item ti: tempo inicial (em dias)
+#'   \item tf: tempo final (em dias)
+#'   \item cens: indicadora de falha ou censura
+#'   \item cd4: contagem de células cd4 medida no início do estudo
+#'   \item cd8: contagem de células cd8 medida no início do estudo
+#'   \item ats: atividade sexual (1 - homossexual; 2 - bissexual; 3 heterossexual)
+#'   \item ud: use de droga injetável (1 - sim; 2 - não)
+#'   \item ac: uso de cocaína por aspiração (1 - sim; 2 - não)
+#' }
+#' @references
+#'
+#' \insertRef{bookEnrico}{sobrevivencia}
 #'
 NULL

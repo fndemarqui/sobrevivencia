@@ -14,7 +14,7 @@ Data frame com 94 linhas e 4 variáveis:
 }
 }
 \description{
-Estudo retrospectivo realizado com 94 mulhres, das quais 46 receberam o tratamento somente com radioterapia e 48 com radioterapia e quimioterapia. O evento de interesse foi definido como a ocorrência da primeira (moderada ou severa) da primeira retração de uma mama. As pacientes foram inicialmente observadas a cada 4-6 meses e, assim que ficavam melhores o intervalo entre as visitas aumentava.
+Estudo retrospectivo realizado com 94 mulhres, das quais 46 receberam o tratamento somente com radioterapia e 48 com radioterapia e quimioterapia. O evento de interesse foi definido como a ocorrência da primeira (moderada ou severa) retração de uma mama. As pacientes foram inicialmente observadas a cada 4-6 meses e, assim que ficavam melhores o intervalo entre as visitas aumentava.
 }
 \references{
 \insertRef{bookEnrico}{sobrevivencia}

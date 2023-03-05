@@ -11,44 +11,11 @@ Data frame com 10 linhas e 3 variáveis:
 \item saida: tempo de saída do paciente no estudo (em meses)
 \item evento: indicadora da ocorrência do evento de interesse (reincidência)
 }
-
-Data frame com 10 linhas e 3 variáveis:
-\itemize{
-\item entrada: tempo de entrada do paciente no estudo (em meses)
-\item saida: tempo de saída do paciente no estudo (em meses)
-\item evento: indicadora da ocorrência do evento de interesse (reincidência)
-}
-
-Data frame com 10 linhas e 3 variáveis:
-\itemize{
-\item entrada: tempo de entrada do paciente no estudo (em meses)
-\item saida: tempo de saída do paciente no estudo (em meses)
-\item evento: indicadora da ocorrência do evento de interesse (reincidência)
-}
-
-Data frame com 10 linhas e 3 variáveis:
-\itemize{
-\item entrada: tempo de entrada do paciente no estudo (em meses)
-\item saida: tempo de saída do paciente no estudo (em meses)
-\item evento: indicadora da ocorrência do evento de interesse (reincidência)
-}
 }
 \description{
 Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-
-Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-
-Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
-
-Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
 }
 \references{
-\insertRef{bookMarta}{sobrevivencia}
-
-\insertRef{bookMarta}{sobrevivencia}
-
-\insertRef{bookMarta}{sobrevivencia}
-
 \insertRef{bookMarta}{sobrevivencia}
 }
 \author{

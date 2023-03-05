@@ -10,21 +10,11 @@ Data frame com 6 linhas e 2 variáveis:
 \item tempo: tempo de vida dos isoladores (em horas)
 \item evento: indicadora da ocorrência do evento de interesse (retração)
 }
-
-Data frame com 6 linhas e 2 variáveis:
-\itemize{
-\item tempo: tempo de vida dos isoladores (em horas)
-\item evento: indicadora da ocorrência do evento de interesse (retração)
-}
 }
 \description{
 Um fabricante de em tipo de isolador elétrico quer conhecer o comportamento do seu produto funcionando na temperatura de 200º C. Um teste de vida foi realizado nestas condições usando 60 isoladores elétricos. O teste terminou quando 45 isoladores falharam (censura à direita do tipo II). As 15 unidades que não falharam até o final do teste foram censuradas no tempo t = 2729 horas.
-
-Um fabricante de em tipo de isolador elétrico quer conhecer o comportamento do seu produto funcionando na temperatura de 200º C. Um teste de vida foi realizado nestas condições usando 60 isoladores elétricos. O teste terminou quando 45 isoladores falharam (censura à direita do tipo II). As 15 unidades que não falharam até o final do teste foram censuradas no tempo t = 2729 horas.
 }
 \references{
-\insertRef{bookMarta}{sobrevivencia}
-
 \insertRef{bookMarta}{sobrevivencia}
 }
 \author{
