@@ -1,0 +1,37 @@
+---
+title: "turnbull"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{turnbull}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, message = FALSE}
+library(sobrevivencia)
+library(tidyverse)
+
+data(mama)
+mama <- mama %>%
+ mutate(
+   direita = ifelse(is.na(direita), Inf, direita)
+ )
+
+
+tbe1 <- turnbull(Inter(esquerda, direita)~1, data = mama)
+tbe2 <- turnbull(Inter(esquerda, direita)~terapia, data = mama)
+
+
+ggplot(tbe1, aes(x=time, y=survival)) +
+ geom_step()
+
+ggplot(tbe2, aes(x=time, y=survival, color = terapia)) +
+ geom_step()
+```

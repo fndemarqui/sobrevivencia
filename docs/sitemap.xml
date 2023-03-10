@@ -16,10 +16,16 @@
     <loc>/articles/sobrevivencia.html</loc>
   </url>
   <url>
+    <loc>/articles/turnbull.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
     <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Inter.html</loc>
   </url>
   <url>
     <loc>/reference/camundongos.html</loc>
@@ -71,5 +77,8 @@
   </url>
   <url>
     <loc>/reference/tumores.html</loc>
+  </url>
+  <url>
+    <loc>/reference/turnbull.html</loc>
   </url>
 </urlset>
