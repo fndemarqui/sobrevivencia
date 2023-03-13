@@ -2,7 +2,7 @@
 
 
 
-tbfit <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
+tbfit <- function(formula, data, eps, iter.max, verbose=FALSE, ...){
 
   interv <- function(x,inf,sup) ifelse(x[1]>=inf & x[2]<=sup,1,0)
 
@@ -19,7 +19,8 @@ tbfit <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
   resp <- as.data.frame(stats::model.response(mf))
   lower <- resp[,"lower"]
   upper <- resp[,"upper"]
-  tau <- sort(unique(c(lower, upper[is.finite(upper)])))
+  #tau <- sort(unique(c(lower, upper[is.finite(upper)])))
+  tau <- sort(unique(c(lower, upper)))
   m <-length(tau)
   ekm <-survfit(Surv(tau[1:m-1], rep(1, m-1))~1)
   So <- c(1,ekm$surv)
@@ -133,7 +134,7 @@ turnbull <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
     for(g in groups){
       mydata <- df %>%
         filter(group == g)
-      fit <- tbfit(Inter(lower, upper) ~ 1, mydata, ...)
+      fit <- tbfit(Inter(lower, upper) ~ 1, mydata, eps, iter.max, ...)
       fit$group <- g
       tbe <- bind_rows(tbe, fit)
     }
@@ -153,7 +154,7 @@ turnbull <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
       lower = lower,
       upper = upper
     )
-    tbe <- tbfit(Inter(lower, upper) ~ 1, df, ...)
+    tbe <- tbfit(Inter(lower, upper) ~ 1, df, eps, iter.max, ...)
     names(tbe) <- c("time", "survival")
   }
 
