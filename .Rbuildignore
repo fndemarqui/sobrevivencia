@@ -4,3 +4,5 @@
 ^\.Rhistory$
 ^doc$
 ^Meta$
+^\.Rbuildignore$
+^\.gitignore$

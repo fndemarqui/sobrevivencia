@@ -4,3 +4,5 @@ stuff
 inst/doc
 /doc/
 /Meta/
+.Rbuildignore
+.gitignore
