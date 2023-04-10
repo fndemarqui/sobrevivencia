@@ -85,14 +85,14 @@ NULL
 NULL
 
 
-#' Tempo de vida e isoladores elétricos
+#' Tempo de vida de isoladores elétricos
 #'
 #' @name isoladores
 #' @docType data
 #' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
 #' @keywords datasets
 #' @description Um fabricante de em tipo de isolador elétrico quer conhecer o comportamento do seu produto funcionando na temperatura de 200º C. Um teste de vida foi realizado nestas condições usando 60 isoladores elétricos. O teste terminou quando 45 isoladores falharam (censura à direita do tipo II). As 15 unidades que não falharam até o final do teste foram censuradas no tempo t = 2729 horas.
-#' @format Data frame com 6 linhas e 2 variáveis:
+#' @format Data frame com 60 linhas e 2 variáveis:
 #' \itemize{
 #'   \item tempo: tempo de vida dos isoladores (em horas)
 #'   \item evento: indicadora da ocorrência do evento de interesse (retração)
@@ -364,5 +364,25 @@ NULL
 #' @references
 #'
 #' \insertRef{bookEnrico}{sobrevivencia}
+#'
+NULL
+
+
+#' Tempo de vida de componentes mecânicos
+#'
+#' @name compmec
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Um componente mecânico possui a variável temperatura como fator de aceleração para a ocorrência de falha. Com o objetivo de estudar o tempo de vida (em horas) dos componentes, um engenheiro realizou um experimento envolvendo 40 componentes, divididos igualmente em 4 diferentes temperaturas medidas em Kelvin: 300, 350, 400 e 500. A temperatura de 300 graus Kelvin corresponde a temperatura normal de operação do componente, e o modelo de Arrenhius foi utilizado para estudar a confiabilidade dos componentes mecânicos.
+#' @format Data frame com 40 linhas e 3 variáveis:
+#' \itemize{
+#'   \item temperatura: temperatura medida em Kelvin
+#'   \item tempo: tempo de vida dos componentes mecânicos (em horas)
+#'   \item evento: indicadora da ocorrência do evento de interesse (retração)
+#' }
+#' @references
+#'
+#' \insertRef{bookMarta}{sobrevivencia}
 #'
 NULL

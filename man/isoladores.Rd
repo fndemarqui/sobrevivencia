@@ -3,9 +3,9 @@
 \docType{data}
 \name{isoladores}
 \alias{isoladores}
-\title{Tempo de vida e isoladores elétricos}
+\title{Tempo de vida de isoladores elétricos}
 \format{
-Data frame com 6 linhas e 2 variáveis:
+Data frame com 60 linhas e 2 variáveis:
 \itemize{
 \item tempo: tempo de vida dos isoladores (em horas)
 \item evento: indicadora da ocorrência do evento de interesse (retração)

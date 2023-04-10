@@ -44,3 +44,6 @@ ggresiduals.survreg <- function(object, type = c("I", "II")){
   }
 
 }
+
+
+

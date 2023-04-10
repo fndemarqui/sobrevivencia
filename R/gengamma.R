@@ -6,6 +6,20 @@ qggamma <- function(p, alpha, gamma, kappa){
   return(x)
 }
 
+#' #' @export
+#' qggamma2 <- function(p, nu, gamma, kappa){
+#'   q <- qgamma(p, shape = nu, scale = 1)
+#'   x <- gamma*(q^(1/kappa))
+#'   return(x)
+#' }
+#'
+#' #' @export
+#' qggamma3 <- function(p, nu, gamma, kappa){
+#'   q <- qgamma(p, shape = nu, scale = 1)
+#'   x <- gamma*(q^(1/kappa))
+#'   return(x)
+#' }
+
 #' @export
 rggamma <- function(n, alpha, gamma, kappa){
   u <- runif(n)
@@ -27,6 +41,44 @@ dggamma <- function(x, alpha, gamma, kappa, log = FALSE){
 pggamma <- function(q, alpha, gamma, kappa, log = FALSE, lower.tail = TRUE){
   x <- (q/gamma)^kappa
   p <- pgamma(x, shape = alpha/kappa, scale = 1)
+  if(isTRUE(log)){
+    if(isTRUE(lower.tail)){
+      return(log(p))
+    }else{
+      return(log(1-p))
+    }
+  }else{
+    if(isTRUE(lower.tail)){
+      return(p)
+    }else{
+      return(1-p)
+    }
+  }
+}
+
+#' @export
+pggamma2 <- function(q, nu, gamma, kappa, log = FALSE, lower.tail = TRUE){
+  x <- (q/gamma)^kappa
+  p <- pgamma(x, shape = nu, scale = 1)
+  if(isTRUE(log)){
+    if(isTRUE(lower.tail)){
+      return(log(p))
+    }else{
+      return(log(1-p))
+    }
+  }else{
+    if(isTRUE(lower.tail)){
+      return(p)
+    }else{
+      return(1-p)
+    }
+  }
+}
+
+#' @export
+pggamma3 <- function(q, nu, lambda, kappa, log = FALSE, lower.tail = TRUE){
+  x <- lambda*(q^kappa)
+  p <- pgamma(x, shape = nu, scale = 1)
   if(isTRUE(log)){
     if(isTRUE(lower.tail)){
       return(log(p))
