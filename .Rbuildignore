@@ -6,3 +6,4 @@
 ^Meta$
 ^\.Rbuildignore$
 ^\.gitignore$
+^inst/stuff$

@@ -1,49 +1,113 @@
 
-# criando a função generica ggresiduals
 
+
+#---------------------------------------------
+#' Generic S3 method ggresiduals
+#' @aliases ggresiduals
 #' @export
+#' @param object a fitted model object.
+#' @details Generic method to plot residuals of survival models.
+#' @param ... further arguments passed to or from other methods.
+#' @return the desired residual plot.
+#'
 ggresiduals <- function(object, ...) UseMethod("ggresiduals")
 
 
+#' ggresiduals method for survstan models
+#' @aliases ggresiduals.survreg
 #' @export
-ggresiduals.survreg <- function(object, type = c("I", "II")){
+#' @param object a fitted model object of the class survstan.
+#' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
+#' @param type type of residuals used in the plot: coxsnell (default), martingale and deviance.
+#' @param ... further arguments passed to or from other methods.
+#' @return the desired residual plot.
+#'
+ggresiduals.survreg <- function(object, type = c("coxsnell", "martingale", "deviance"), ...){
+
+  type <- tolower(type)
   type <- match.arg(type)
   dist <- object$dist
   mf <- model.frame(object)
   time <- model.extract(mf, "response")[,1]
-  status <- model.extract(mf, "response")[,2]
-  epsilon <- with(object, (log(time)-linear.predictors)/scale)
+  event <- model.extract(mf, "response")[,2]
+  lp <- object$linear.predictors
+  scale <- object$scale
+  y = log(time)
+  epsilon <- (y - lp)/scale
   nu <- exp(epsilon)
-  ekm <- survfit(Surv(nu, status)~1)
-  surv <- switch(dist,
-                 exponential = pexp(ekm$time, lower=FALSE,),
-                 weibull = pexp(ekm$time, lower=FALSE),
-                 lognormal = plnorm(ekm$time, lower=FALSE),
-                 loglogistic = 1/(1+ekm$time)
+  rcs <- switch(dist,
+                exponential = -pexp(nu, rate = 1, lower.tail=FALSE, log.p = TRUE),
+                weibull = -pexp(nu, rate = 1, lower.tail=FALSE, log.p = TRUE),
+                lognormal = -plnorm(nu, meanlog = 0, sdlog = 1, lower.tail=FALSE, log.p = TRUE),
+                loglogistic = -actuar::pllogis(nu, shape = 1, scale = 1, lower.tail = FALSE, log.p = TRUE)
   )
 
 
-  df <- data.frame(time = ekm$time, surv1 = ekm$surv, surv2 = surv)
-  if(type == "I"){
-    p <- ggplot(df, aes(x = time)) +
-      geom_step(aes(y = surv1)) +
-      geom_line(aes(y = surv2), color = "blue") +
-      ylim(0, 1) +
-      xlab("exp(standardized residuals)") +
-      ylab("Survival") +
-      ggtitle(object$dist)
-    p
-  }else{
-    n <- nrow(df)
-    p <- ggplot(df, aes(x = surv1, y = surv2)) +
+  if(type == "coxsnell"){
+    ekm <- survfit(Surv(rcs, event)~1)
+    tb <- tibble::tibble(
+      time = ekm$time,
+      ekm = ekm$surv,
+      surv = exp(-time)
+    )
+
+    ggplot(data = tb, aes(x=ekm, y=surv)) +
       geom_point() +
-      geom_line(aes(x = seq(0, 1, length.out = n), y = seq(0, 1, length.out = n)), color = "blue") +
-      xlab("Kaplan-Meyer") +
-      ylab(object$dist)
-    p
+      geom_abline(intercept = 0, slope = 1, color = "blue") +
+      labs(x = "Kaplan-Meier", y = dist) +
+      xlim(0, 1) +
+      ylim(0, 1)
+
+  }else if(type == "martingale"){
+    X <- stats::model.matrix(object)[, -1, drop = FALSE]
+    p <- ncol(X)
+    mf <- stats::model.frame(object)
+    time <- stats::model.response(mf)[, 1]
+    martingale <- event - rcs
+    if(p==0){
+      message("Martingale residuals plots available only for models with at least one covariate!")
+    }else{
+      labels <- names(mf)[-1]
+      tb <- mf %>%
+        select(labels)
+      labels <- names(tb)
+      q <- ncol(tb)
+
+      plots <- list()
+      for(j in 1:q){
+        df <- data.frame(
+          x = tb[,j],
+          martingale = martingale
+        )
+        if(is.factor(df$x)){
+          plots[[j]] <- ggplot(data = df, aes(x = x, y = martingale)) +
+            geom_jitter(position=position_jitter(0.1))
+          xlab(labels[j])
+        }else{
+          plots[[j]] <- ggplot(data = df, aes(x = x, y = martingale)) +
+            geom_point() +
+            geom_smooth(se = FALSE) +
+            xlab(labels[j])
+        }
+      }
+      if(q==1){
+        gridExtra::grid.arrange(grobs = plots)
+      }else{
+        gridExtra::grid.arrange(grobs = plots, ncol = 2)
+      }
+    }
+  }else{
+    mf <- stats::model.frame(object)
+    time <- stats::model.response(mf)[, 1]
+    martingale <- event - rcs
+    df <- data.frame(
+      obs = 1:length(time),
+      deviance = sign(martingale)*sqrt((-2*(martingale + event*log(event - martingale))))
+    )
+
+    ggplot(data = df, aes(x = obs, y = deviance)) +
+      geom_point() +
+      geom_abline(intercept = 0, slope = 0 , color = "blue")
+
   }
-
 }
-
-
-
