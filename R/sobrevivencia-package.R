@@ -3,7 +3,7 @@
 #'
 #' @description Random generation of survival data based on different survival regression models available in the literature, including Accelerated Failure Time (AFT) model, Proportional Hazard (PH) model, Proportional Odds (PO) model and the Yang & Prentice (YP) model.
 #'
-#' @docType package
+#' _PACKAGE
 #' @name sobrevivencia-package
 #' @aliases sobrevivencia
 #' @import survival

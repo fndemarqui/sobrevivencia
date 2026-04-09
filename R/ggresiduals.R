@@ -1,20 +1,7 @@
 
-
-
-#---------------------------------------------
-#' Generic S3 method ggresiduals
-#' @aliases ggresiduals
-#' @export
-#' @param object a fitted model object.
-#' @details Generic method to plot residuals of survival models.
-#' @param ... further arguments passed to or from other methods.
-#' @return the desired residual plot.
-#'
-ggresiduals <- function(object, ...) UseMethod("ggresiduals")
-
-
 #' ggresiduals method for survreg models
 #' @aliases ggresiduals.survreg
+#' @importFrom survstan ggresiduals
 #' @export
 #' @param object a fitted model object of the class survreg.
 #' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
