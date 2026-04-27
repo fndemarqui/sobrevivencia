@@ -85,23 +85,23 @@ Inter <- function(lower, upper){
 #' @examples
 #' \donttest{
 #' library(sobrevivencia)
-#' library(tidyverse)
+#' library(dplyr)
+#' library(ggplot2)
 #'
 #' data(mama)
-#' mama <- mama %>%
-#'  mutate(
-#'    direita = ifelse(is.na(direita), Inf, direita)
-#'  )
+#' mama <- mama |>
+#'   mutate(
+#'     direita = ifelse(is.na(direita), Inf, direita)
+#'   )
 #'
+#' tbe1 <- turnbull(Inter(esquerda, direita)~1, data = mama)
+#' tbe2 <- turnbull(Inter(esquerda, direita)~terapia, data = mama)
 #'
-#'tbe1 <- turnbull(Inter(esquerda, direita)~1, data = mama)
-#'tbe2 <- turnbull(Inter(esquerda, direita)~terapia, data = mama)
+#' ggplot(tbe1, aes(x = time, y = survival)) +
+#'   geom_step()
 #'
-#'ggplot(tbe2, aes(x=time, y=survival, color = terapia)) +
-#'  geom_step()
-#'
-#'ggplot(tbe1, aes(x=time, y=survival)) +
-#'  geom_step()
+#' ggplot(tbe2, aes(x = time, y = survival, color = terapia)) +
+#'   geom_step()
 #' }
 turnbull <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
 
@@ -132,7 +132,7 @@ turnbull <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
 
     tbe <- data.frame()
     for(g in groups){
-      mydata <- df %>%
+      mydata <- df |>
         filter(group == g)
       fit <- tbfit(Inter(lower, upper) ~ 1, mydata, eps, iter.max, ...)
       fit$group <- g
@@ -145,7 +145,7 @@ turnbull <- function(formula, data, eps=1e-3, iter.max=200, verbose=FALSE, ...){
       group = unique(tbe$group)
     )
 
-    tbe <- bind_rows(tbe, df) %>%
+    tbe <- bind_rows(tbe, df) |>
       arrange(group, time)
     names(tbe) <- c("time", "survival", names(mf)[2])
 

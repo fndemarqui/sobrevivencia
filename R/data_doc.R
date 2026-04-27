@@ -71,7 +71,7 @@ NULL
 #' @docType data
 #' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
 #' @keywords datasets
-#' @description Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
+#' @description Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o período de acomapanhamento.
 #' @format Data frame com 10 linhas e 3 variáveis:
 #' \itemize{
 #'   \item entrada: tempo de entrada do paciente no estudo (em meses)
@@ -364,6 +364,32 @@ NULL
 #' @references
 #'
 #' \insertRef{bookEnrico}{sobrevivencia}
+#'
+NULL
+
+
+#' Dados de pacientes com câncer do INCA
+#'
+#' @name inca
+#' @docType data
+#' @author Fábio N. Demarqui \email{fndemarqui@est.ufmg.br}
+#' @keywords datasets
+#' @description Dados de sobrevivência de 862 pacientes com câncer provenientes do
+#'   Instituto Nacional de Câncer (INCA). O banco de dados inclui informações
+#'   clínicas e demográficas dos pacientes, bem como o tempo de acompanhamento
+#'   e o indicador de ocorrência do evento de interesse (óbito).
+#' @format Data frame com 862 linhas e 9 variáveis:
+#' \itemize{
+#'   \item id: identificador do paciente
+#'   \item tempo: tempo de acompanhamento (em dias)
+#'   \item status: indicadora do evento (1 = óbito; 0 = censura)
+#'   \item sexo: sexo do paciente (Fem = feminino; Male = masculino)
+#'   \item idade: idade do paciente (em anos)
+#'   \item gptumor: grupo do tumor (Loco = locorregional; Mtx = metastático; Hemato = hematológico)
+#'   \item desnut: indicadora de desnutrição (y = sim; n = não)
+#'   \item comorbi: indicadora de comorbidade (y = sim; n = não)
+#'   \item leucopenia: indicadora de leucopenia (y = sim; n = não)
+#' }
 #'
 NULL
 

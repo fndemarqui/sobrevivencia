@@ -13,7 +13,7 @@ Data frame com 10 linhas e 3 variáveis:
 }
 }
 \description{
-Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o perı́odo de acomapanhamento.
+Estudo realizado com o objetivo de avaliar o tempo de reincidência de pacientes com tumores sólidos. O experimento, cuja duração foi de 18 meses, teve início com apens 3 pacientes, e 7 pacientes entram no estudo durante o período de acomapanhamento.
 }
 \references{
 \insertRef{bookMarta}{sobrevivencia}

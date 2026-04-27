@@ -6,6 +6,22 @@
 \usage{
 pggamma3(q, nu, lambda, kappa, log = FALSE, lower.tail = TRUE)
 }
+\arguments{
+\item{q}{vector of quantiles.}
+
+\item{nu}{shape parameter (nu > 0).}
+
+\item{lambda}{rate parameter (lambda > 0).}
+
+\item{kappa}{shape parameter (kappa > 0).}
+
+\item{log}{logical; if TRUE, probabilities are returned on the log scale. Default is FALSE.}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are P(X <= x), otherwise P(X > x).}
+}
+\value{
+A numeric vector of (log) probabilities.
+}
 \description{
 Generalized gamma distribution
 }

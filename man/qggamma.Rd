@@ -6,6 +6,18 @@
 \usage{
 qggamma(p, alpha, gamma, kappa)
 }
+\arguments{
+\item{p}{vector of probabilities.}
+
+\item{alpha}{scale parameter (alpha > 0).}
+
+\item{gamma}{shape parameter (gamma > 0).}
+
+\item{kappa}{shape parameter (kappa > 0).}
+}
+\value{
+A numeric vector of quantiles.
+}
 \description{
 Generalized gamma distribution
 }

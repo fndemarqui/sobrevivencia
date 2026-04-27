@@ -28,22 +28,22 @@ Turnbull estimator for interval-censored survival data
 \examples{
 \donttest{
 library(sobrevivencia)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 
 data(mama)
-mama <- mama \%>\%
- mutate(
-   direita = ifelse(is.na(direita), Inf, direita)
- )
-
+mama <- mama |>
+  mutate(
+    direita = ifelse(is.na(direita), Inf, direita)
+  )
 
 tbe1 <- turnbull(Inter(esquerda, direita)~1, data = mama)
 tbe2 <- turnbull(Inter(esquerda, direita)~terapia, data = mama)
 
-ggplot(tbe2, aes(x=time, y=survival, color = terapia)) +
- geom_step()
+ggplot(tbe1, aes(x = time, y = survival)) +
+  geom_step()
 
-ggplot(tbe1, aes(x=time, y=survival)) +
- geom_step()
+ggplot(tbe2, aes(x = time, y = survival, color = terapia)) +
+  geom_step()
 }
 }

@@ -7,3 +7,4 @@ inst/doc
 .Rbuildignore
 .gitignore
 inst/stuff
+.positai

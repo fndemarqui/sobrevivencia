@@ -6,6 +6,20 @@
 \usage{
 hggamma(x, alpha, gamma, kappa, log = FALSE)
 }
+\arguments{
+\item{x}{vector of quantiles.}
+
+\item{alpha}{scale parameter (alpha > 0).}
+
+\item{gamma}{shape parameter (gamma > 0).}
+
+\item{kappa}{shape parameter (kappa > 0).}
+
+\item{log}{logical; if TRUE, the log-hazard is returned. Default is FALSE.}
+}
+\value{
+A numeric vector of (log) hazard values.
+}
 \description{
 Generalized gamma distribution
 }

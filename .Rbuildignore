@@ -7,3 +7,5 @@
 ^\.Rbuildignore$
 ^\.gitignore$
 ^inst/stuff$
+^\.positai$
+^\.claude$

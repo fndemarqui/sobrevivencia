@@ -4,9 +4,9 @@
 #' @importFrom survstan ggresiduals
 #' @export
 #' @param object a fitted model object of the class survreg.
-#' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
 #' @param type type of residuals used in the plot: coxsnell (default), martingale and deviance.
 #' @param ... further arguments passed to or from other methods.
+#' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
 #' @return the desired residual plot.
 #'
 ggresiduals.survreg <- function(object, type = c("coxsnell", "martingale", "deviance"), ...){
@@ -55,7 +55,7 @@ ggresiduals.survreg <- function(object, type = c("coxsnell", "martingale", "devi
       message("Martingale residuals plots available only for models with at least one covariate!")
     }else{
       labels <- names(mf)[-1]
-      tb <- mf %>%
+      tb <- mf |>
         select(labels)
       labels <- names(tb)
       q <- ncol(tb)
@@ -102,11 +102,12 @@ ggresiduals.survreg <- function(object, type = c("coxsnell", "martingale", "devi
 
 #' ggresiduals method for coxph models
 #' @aliases ggresiduals.coxph
+#' @importFrom survstan ggresiduals
 #' @export
 #' @param object a fitted model object of the class coxph.
-#' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
 #' @param type type of residuals used in the plot: coxsnell (default), martingale and deviance.
 #' @param ... further arguments passed to or from other methods.
+#' @details This function produces residuals plots of Cox-Snell residuals, martingale residuals and deviance residuals.
 #' @return the desired residual plot.
 #'
 ggresiduals.coxph <- function(object, type = c("coxsnell", "martingale", "deviance"), ...){
@@ -186,3 +187,8 @@ ggresiduals.coxph <- function(object, type = c("coxsnell", "martingale", "devian
 
   }
 }
+
+
+
+
+

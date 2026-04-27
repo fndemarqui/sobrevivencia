@@ -6,6 +6,18 @@
 \usage{
 rggamma(n, alpha, gamma, kappa)
 }
+\arguments{
+\item{n}{number of observations.}
+
+\item{alpha}{scale parameter (alpha > 0).}
+
+\item{gamma}{shape parameter (gamma > 0).}
+
+\item{kappa}{shape parameter (kappa > 0).}
+}
+\value{
+A numeric vector of random deviates.
+}
 \description{
 Generalized gamma distribution
 }

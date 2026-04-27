@@ -1,6 +1,6 @@
 Package: sobrevivencia
 Title: Analise de Sobrevivencia e Confiabilidade
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: 
     person("Fabio", "Demarqui", , "fndemarqui@est.ufmg.br", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9236-1986"))
@@ -13,15 +13,21 @@ Depends:
     survival,
     R (>= 2.10)
 LazyData: true
-Imports: 
+Imports:
+  actuar,
+  dplyr,
+  ggplot2,
+  gridExtra,
+  patchwork,
   Rdpack,
-  rsurv,
-  survstan
+  rlang,
+  splines2,
+  survstan,
+  tibble
 RdMacros: Rdpack
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
-suggests: 
+Suggests:
     GGally,
+    knitr,
+    rmarkdown,
     tidyverse
+VignetteBuilder: knitr

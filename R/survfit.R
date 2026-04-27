@@ -29,7 +29,7 @@ survfit.survreg <- function(formula, newdata = NULL, ...){
   newdata$lp <-  stats::predict(object, newdata = newdata, type = "lp")
   df <- data.frame(
     time = time
-  ) %>%
+  ) |>
     dplyr::cross_join(newdata)
 
   N <- nrow(df)
@@ -47,16 +47,16 @@ survfit.survreg <- function(formula, newdata = NULL, ...){
                  loglogistic = actuar::pllogis(nu, shape = 1, scale = 1, lower.tail = FALSE)
   )
 
-  surv <- df %>%
+  surv <- df |>
     dplyr::mutate(
       id = as.factor(rep(1:J, n)),
       surv  = surv
-    ) %>%
-    dplyr::relocate(.data$id, .before = time) %>%
+    ) |>
+    dplyr::relocate(.data$id, .before = time) |>
     dplyr::select(-.data$lp)
 
   if(isTRUE(null)){
-    surv <- surv %>%
+    surv <- surv |>
       select(-.data$id)
   }
 
