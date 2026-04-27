@@ -32,15 +32,17 @@ ggcoxzph <- function(object, df = 4, ...) {
 #' @export
 ggcoxzph.cox.zph <- function(object, df = 4, ...) {
   labels <- colnames(object$y)
+  safe_labels <- make.names(labels)
   dat <- data.frame(time = object$x, object$y)
+  colnames(dat)[-1] <- safe_labels
   plots <- list()
-  for (label in labels) {
-    p <- ggplot(dat, aes(x = time, y = .data[[label]])) +
+  for (i in seq_along(labels)) {
+    p <- ggplot(dat, aes(x = time, y = .data[[safe_labels[i]]])) +
       geom_point() +
       geom_smooth(
         method = lm, formula = y ~ splines2::bsp(x, df = df)
       ) +
-      labs(x = "Time", y = label)
+      labs(x = "Time", y = labels[i])
     plots <- c(plots, list(p))
   }
   names(plots) <- labels
