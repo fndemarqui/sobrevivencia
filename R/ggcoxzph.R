@@ -42,7 +42,7 @@ ggcoxzph.cox.zph <- function(object, df = 4, ...) {
       geom_smooth(
         method = lm, formula = y ~ splines2::bsp(x, df = df)
       ) +
-      labs(x = "Time", y = labels[i])
+      labs(x = "Time", y = paste("Beta(t) for ", labels[i]))
     plots <- c(plots, list(p))
   }
   names(plots) <- labels
