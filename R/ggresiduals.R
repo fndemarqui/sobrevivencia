@@ -1,8 +1,12 @@
-
-#' ggresiduals method for survreg models
-#' @aliases ggresiduals.survreg
 #' @importFrom survstan ggresiduals
 #' @export
+survstan::ggresiduals
+
+
+#' ggresiduals method for survreg models
+#' @importFrom survstan ggresiduals
+#' @export
+#' @aliases ggresiduals.survreg
 #' @param object a fitted model object of the class survreg.
 #' @param type type of residuals used in the plot: coxsnell (default), martingale and deviance.
 #' @param ... further arguments passed to or from other methods.
@@ -101,9 +105,9 @@ ggresiduals.survreg <- function(object, type = c("coxsnell", "martingale", "devi
 
 
 #' ggresiduals method for coxph models
-#' @aliases ggresiduals.coxph
 #' @importFrom survstan ggresiduals
 #' @export
+#' @aliases ggresiduals.coxph
 #' @param object a fitted model object of the class coxph.
 #' @param type type of residuals used in the plot: coxsnell (default), martingale and deviance.
 #' @param ... further arguments passed to or from other methods.
@@ -116,8 +120,16 @@ ggresiduals.coxph <- function(object, type = c("coxsnell", "martingale", "devian
   type <- match.arg(type)
   p <- length(coef(object))
   mf <- model.frame(object)
-  time <- model.extract(mf, "response")[,1]
-  event <- model.extract(mf, "response")[,2]
+  resp <- model.extract(mf, "response")
+  d <- ncol(resp)
+  if(d == 2){
+    time <- resp[, 1]
+    event <- resp[, 2]
+  }else{
+    time <- resp[, 2]
+    event <- resp[, 3]
+  }
+
   lp <- object$linear.predictors
 
   martingale <- residuals(object, type = "martingale")

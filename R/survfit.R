@@ -1,6 +1,10 @@
 
+#' @importFrom survival survfit
+#' @export
+survival::survfit
+
+
 #' survfit method for survreg models
-#'
 #' @aliases survfit.survreg
 #' @description Computes the predicted survivor function for a phpe model.
 #' @importFrom survival survfit
