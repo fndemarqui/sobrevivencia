@@ -8,6 +8,9 @@
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
 <url><loc>/reference/Inter.html</loc></url>
+<url><loc>/reference/augment.ehreg.html</loc></url>
+<url><loc>/reference/augment.survstan.html</loc></url>
+<url><loc>/reference/augment.ypreg.html</loc></url>
 <url><loc>/reference/camundongos.html</loc></url>
 <url><loc>/reference/compmec.html</loc></url>
 <url><loc>/reference/dggamma.html</loc></url>
@@ -32,6 +35,7 @@
 <url><loc>/reference/pggamma3.html</loc></url>
 <url><loc>/reference/pulmao.html</loc></url>
 <url><loc>/reference/qggamma.html</loc></url>
+<url><loc>/reference/reexports.html</loc></url>
 <url><loc>/reference/rggamma.html</loc></url>
 <url><loc>/reference/sinusite.html</loc></url>
 <url><loc>/reference/sobrevivencia-package.html</loc></url>

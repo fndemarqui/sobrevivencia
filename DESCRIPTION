@@ -1,6 +1,6 @@
 Package: sobrevivencia
 Title: Analise de Sobrevivencia e Confiabilidade
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: 
     person("Fabio", "Demarqui", , "fndemarqui@est.ufmg.br", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9236-1986"))
@@ -15,6 +15,7 @@ Depends:
 LazyData: true
 Imports:
   actuar,
+  broom,
   dplyr,
   ggplot2,
   gridExtra,

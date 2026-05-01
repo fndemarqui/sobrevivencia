@@ -1,5 +1,68 @@
 
-
 template:
   params:
     ganalytics: G-4T49WHMG88
+
+reference:
+  - title: "Package overview"
+    contents:
+      - sobrevivencia-package
+
+  - title: "Model diagnostics"
+    desc: >
+      Residual diagnostics and goodness-of-fit tools for parametric and
+      semi-parametric survival models.
+    contents:
+      - augment.survstan
+      - augment.ypreg
+      - augment.ehreg
+      - ggresiduals.survreg
+      - ggresiduals.coxph
+      - ggcoxzph
+
+  - title: "Survival estimation"
+    desc: >
+      Nonparametric and parametric estimation of the survival function.
+    contents:
+      - survfit.survreg
+      - turnbull
+      - Inter
+
+  - title: "Generalized gamma distribution"
+    desc: >
+      Density, distribution, quantile, random generation, and hazard
+      functions for the generalized gamma distribution.
+    contents:
+      - dggamma
+      - pggamma
+      - pggamma2
+      - pggamma3
+      - qggamma
+      - rggamma
+      - hggamma
+
+  - title: "Datasets"
+    desc: "Survival datasets included in the package."
+    contents:
+      - camundongos
+      - compmec
+      - diarreia
+      - e1684
+      - hepatite
+      - inca
+      - isoladores
+      - lasers
+      - leukUK
+      - malaria
+      - mama
+      - nwengland
+      - oportunista
+      - pulmao
+      - sinusite
+      - transformadores
+      - tumores
+
+  - title: "Re-exports"
+    desc: "Generics re-exported for use with this package's methods."
+    contents:
+      - reexports
